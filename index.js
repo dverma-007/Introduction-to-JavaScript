@@ -19,8 +19,12 @@ Do the following:
 
    HINT: no function required
 */
-
-
+let votingAge = 21;
+if (votingAge > 18) {
+    console.log(true)
+} else {
+    console.log(false)
+}
 
 /*
 Task 1b - Values
@@ -32,6 +36,14 @@ Do the following:
 
    HINT: no function required
 */
+let x = 12;
+let y = 15;
+if (x !== y) {
+    x === y;
+} else {
+    x = 12;
+}
+console.log(x);
 
 
 
@@ -47,7 +59,9 @@ Do the following:
 
    HINT: look up the Number method
 */
-
+let z = "1999"
+parseInt(x);
+console.log(x);
 
 
 
@@ -60,9 +74,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b) {
+    /*add your code here*/
+    return (a * b)
 }
+console.log(2, 4);
 
 
 
@@ -76,8 +92,9 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age) {
+    /*add your code here*/
+    return (age * 7);
 }
 
 
@@ -107,142 +124,187 @@ Puppies less than 1 year
    7 - 12 months 4% of their body weight
   
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
-*/  
-
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
-}
-
-
-
-/*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
-// Rock, Paper, Scissors - Let's play against the computer!
-/*
-Create a global variable that randomly generates the computer's choice
-Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
-
-HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
-
-Use the game function below to do the following:
-1. Receive 2 parameters the user's choice and the computer's choice
-2. Return whether the user won, lost, or tied based on these rules of the game described below - the strings returned need to match the strings below exactly.
- - win should return "you win!"
- - lose should return "you lose!"
- - tie should return "it's a tie"
-
-RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
-
-HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-  /*add your code here*/
-}
+function hungryDog(age, weight) {
+    /*add your code here*/
+    if (age > 1) {
+        if (weight > 15) {
+            return (0.02 * weight);
+        } else if (weight >= 11) {
+            return (0.03 * weight);
+        } else if (weight >= 6) {
+            return (0.04 * weight);
+        } else if (weight >= 1) {
+            return (0.05 * weight);
+        }
+    } else {
+        if (age >= (7 / 12)) {
+            return (0.04 * weight);
+        } else if (age >= (4 / 12)) {
+            return (0.05 * weight)
+        } else(0.1 * age)
+    }
+    console.log(hungryDog(2, 11));
 
 
 
-/*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
+    /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-//Metric Converter 
-//Task 5a - KM to Miles 
-/*
-Using the miles function below do the following:
-1. Receive a number of kilometers
-2. Convert the number of kiolmeters received to miles
-3. Return the number of miles
-*/
+    // Rock, Paper, Scissors - Let's play against the computer!
+    /*
+    Create a global variable that randomly generates the computer's choice
+    Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
 
-function miles(/*add your code here*/){
-  /*add your code here*/
-}
+    HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 
+    Use the game function below to do the following:
+    1. Receive 2 parameters the user's choice and the computer's choice
+    2. Return whether the user won, lost, or tied based on these rules of the game described below - the strings returned need to match the strings below exactly.
+     - win should return "you win!"
+     - lose should return "you lose!"
+     - tie should return "it's a tie"
 
+    RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 
-//Task 5b - Feet to CM
-/*
-Using the feet function below do the following:
-1. Receive a number of cm
-2. Convert the number of cm to feet
-3. Return number of feet
-*/
+    HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
+    */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
-}
-
-
-
-/*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
-// Let's Sing 99 Bottles of Soda on the Wall!
-/*
-Using the annoyingSong function below do the following:
-1. Receive a starting number and start the count down from the number received 
-2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
-    "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
-*/
-
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
-}
+    function game(user, computer) {
+        /*add your code here*/
+        computer = Math.random();
+        if (computer > user) {
+            return ("you lose!");
+        } else if (computer < user) {
+            return ("you win!");
+        } else return ("it's a tie");
+    }
+    console.log(game());
 
 
-/*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
+    /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-//Grade Calculator
-/*
-Using the grade function below do the following: 
-1. Receive a score out of 100 
-2. Return the corresponding letter grade following this grade scale:
+    //Metric Converter 
+    //Task 5a - KM to Miles 
+    /*
+    Using the miles function below do the following:
+    1. Receive a number of kilometers
+    2. Convert the number of kiolmeters received to miles
+    3. Return the number of miles
+    */
 
- 90-100 should return 'you got an A' 
- 80-89 should return 'you got a B'
- 70-79 should return 'you got a C'
- 60-69 should return 'you got a D'
- below should return 'you got an F'
-*/
-
-function grade(/*Your Code here */){
-/*Your Code here */
-}
+    function miles(km) {
+        /*add your code here*/
+        return (km * 2.2)
+    }
+    console.log(miles());
 
 
 
-/*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
+    //Task 5b - Feet to CM
+    /*
+    Using the feet function below do the following:
+    1. Receive a number of cm
+    2. Convert the number of cm to feet
+    3. Return number of feet
+    */
 
-//Vowel Counter - How many vowels are there?
-/*
-Using the vowelCounter function below do the following:
-1. Receive a string as a parameter
-2. Count and return the number of vowels within that string.  It should handle both capitalized and uncapitalized vowels.
-
-HINT - you may need to study tomorrow's content on arrays 
-HINT - try looking up the .includes() method
-*/
-
-
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
-}
+    function feet(cm) {
+        /*add your code here*/
+        return (cm / 30.48)
+    }
+    console.log(feet())
 
 
 
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-function foo(){
-  console.log('its working');
-  return 'bar';
-}
-foo();
-/*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-module.exports = {
-  foo,
-  multiply,
-  dogYears,
-  hungryDog,
-  game,
-  miles,
-  feet,
-  annoyingSong,
-  grade
-}
+    /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
+
+    // Let's Sing 99 Bottles of Soda on the Wall!
+    /*
+    Using the annoyingSong function below do the following:
+    1. Receive a starting number and start the count down from the number received 
+    2. At each invocation, it should RETURN this string (note: the tests are expecting the same string as below):
+        "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
+    */
+
+    function annoyingSong(numb) {
+        /*add your code here*/
+        let numbLeftOver = numb - 1;
+        return (`${numb} bottles of soda on the wall, ${numb} bottles of soda, take one down pass it around ${numbLeftOver} bottles of soda on the wall`)
+    }
+    console.log(annoyingSong());
+
+
+    /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
+
+    //Grade Calculator
+    /*
+    Using the grade function below do the following: 
+    1. Receive a score out of 100 
+    2. Return the corresponding letter grade following this grade scale:
+
+     90-100 should return 'you got an A' 
+     80-89 should return 'you got a B'
+     70-79 should return 'you got a C'
+     60-69 should return 'you got a D'
+     below should return 'you got an F'
+    */
+
+    function grade(score) {
+        /*Your Code here */
+        if (score > 89) {
+            return ('you got an A');
+        } else if (score > 79) {
+            return ('you got a B');
+        } else if (score > 69) {
+            return ('you got a C');
+        } else if (score > 59) {
+            return ('you got a D');
+        } else {
+            return ('you got an F')
+        }
+    }
+
+
+
+    /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
+
+    //Vowel Counter - How many vowels are there?
+    /*
+    Using the vowelCounter function below do the following:
+    1. Receive a string as a parameter
+    2. Count and return the number of vowels within that string.  It should handle both capitalized and uncapitalized vowels.
+
+    HINT - you may need to study tomorrow's content on arrays 
+    HINT - try looking up the .includes() method
+    */
+
+
+    function vowelCounter(string1) {
+        /*add your code here*/
+        let x = array.from(vowelCounter);
+        let y = x.filter('aeiouAEIOU');
+        let z = y.length();
+        return (z);
+    }
+    console.log(vowelCounter());
+
+
+    /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+    function foo() {
+        console.log('its working');
+        return 'bar';
+    }
+    foo();
+    /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
+    module.exports = {
+        foo,
+        multiply,
+        dogYears,
+        hungryDog,
+        game,
+        miles,
+        feet,
+        annoyingSong,
+        grade
+    }
