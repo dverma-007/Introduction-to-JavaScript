@@ -126,7 +126,7 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */
 
-function hungryDog(age, weight) {
+function hungryDog(weight, age) {
     /*add your code here*/
     if (age >= 1) {
         if (weight > 15) {
@@ -139,14 +139,16 @@ function hungryDog(age, weight) {
             return (0.05 * weight);
         }
     } else {
-        if (age >= (0.58)) {
+        if (age >= (0.583)) {
             return (0.04 * weight);
-        } else if (age >= (0.333)) {
-            return (0.05 * weight)
-        } else(0.1 * age)
+        } else if (age >= (0.33333333)) {
+            return (0.05 * weight);
+        } else {
+            return (0.1 * weight);
+        }
     }
 }
-console.log(hungryDog(2, 11));
+console.log(hungryDog(11, 2));
 
 
 
@@ -171,38 +173,38 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(User, computer) {
+let computer = Math.random();
+if (computer >= 0.66) {
+    computer = "rock";
+} else if (computer >= 0.33) {
+    computer = "paper";
+} else {
+    computer = "scissors";
+}
+
+function game(user, computer) {
     /*add your code here*/
-    computer = Math.random();
-    if (computer >= 0.667) {
-        computer = "Rock!";
-    } else if (computer >= 0.33) {
-        computer = "Paper";
-    } else {
-        computer = "Scissor";
-    }
-    if (computer === "Rock" && User === "Rock") {
-        ("it's a tie");
-    } else if (computer === "Rock" && User === "Paper") {
-        ("you win!");
-    } else if (computer === "Rock" && User === "Scissor") {
-        ("you Lose!");
-    } else if (computer === "Paper" && User === "Paper") {
-        ("it's a tie");
-    } else if (computer === "Paper" && User === "Rock") {
-        ("you Lose!");
-    } else if (computer === "Paper" && User === "Scissor") {
-        ("you Win!");
-    } else if (computer === "Scissor" && User === "Scissor") {
-        ("it's a tie");
-    } else if (computer === "Scissor" && User === "Paper") {
-        ("you Lose!");
-    } else if (computer === "Scissor" && User === "Rock") {
-        ("you Win!");
+    if (user === "rock" && computer === "rock") {
+        return "it's a tie";
+    } else if (user === "rock" && computer === "paper") {
+        return "you lose!";
+    } else if (user === "rock" && computer === "scissors") {
+        return "you win!";
+    } else if (user === "paper" && computer === "paper") {
+        return "it's a tie";
+    } else if (user === "paper" && computer === "rock") {
+        return "you win!";
+    } else if (user === "paper" && computer === "scissors") {
+        return "you lose!";
+    } else if (user === "scissors" && computer === "scissors") {
+        return "it's a tie";
+    } else if (user === "scissors" && computer === "paper") {
+        return "you win!";
+    } else if (user === "scissors" && computer === "rock") {
+        return "you lose!";
     }
 }
-console.log(game());
-
+console.log(game("paper"));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -217,9 +219,9 @@ Using the miles function below do the following:
 
 function miles(km) {
     /*add your code here*/
-    return (km * 2.2)
+    return (km * 0.621371)
 }
-console.log(miles());
+console.log(miles(2));
 
 
 
